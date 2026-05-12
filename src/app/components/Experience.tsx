@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useReveal } from "../hooks/useReveal";
+import { useEffect, useRef } from "react";
 
 const experiences = [
   {
@@ -39,16 +39,25 @@ const experiences = [
 ];
 
 export default function Experience() {
-  const ref = useReveal(0.06) as React.RefObject<HTMLElement>;
+  const ref = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => entries.forEach((e) => e.isIntersecting && e.target.classList.add("visible")),
+      { threshold: 0.06 }
+    );
+    ref.current?.querySelectorAll(".fade-up").forEach((el) => observer.observe(el));
+    return () => observer.disconnect();
+  }, []);
 
   return (
     <section id="experience" ref={ref} style={{ background: "rgba(0,0,0,0.15)" }}>
       <div className="container">
 
-        <p className="reveal section-label-animate section-label">Experience</p>
+        <p className="section-label fade-up">Experience</p>
 
         <h2
-          className="reveal reveal-left delay-1"
+          className="fade-up fade-up-delay-1"
           style={{ marginBottom: "3.5rem" }}
         >
           Professional background
@@ -56,14 +65,12 @@ export default function Experience() {
 
         <div style={{ display: "flex", flexDirection: "column", gap: "2rem" }}>
           {experiences.map((exp, i) => {
-            /* Alternate cards: even = slide left, odd = slide right */
-            const direction = i % 2 === 0 ? "reveal-left" : "reveal-right";
-            const delay = `delay-${Math.min(i + 2, 7)}`;
+            const delay = `fade-up-delay-${Math.min(i + 2, 5)}`;
 
             return (
               <div
                 key={exp.role}
-                className={`card card-shimmer reveal ${direction} ${delay}`}
+                className={`card fade-up ${delay}`}
                 style={{ position: "relative" }}
               >
                 {/* Subtle index number */}

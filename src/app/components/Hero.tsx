@@ -2,13 +2,18 @@
 
 import { useEffect, useRef } from "react";
 import Image from "next/image";
-import { useReveal, useParallax } from "../hooks/useReveal";
-
-const NAME = "ALBERTO\nFERREIRA";
 
 export default function Hero() {
-  const ref = useReveal(0.05) as React.RefObject<HTMLElement>;
-  const bgRef = useParallax(0.18) as React.RefObject<HTMLDivElement>;
+  const ref = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => entries.forEach((e) => e.isIntersecting && e.target.classList.add("visible")),
+      { threshold: 0.05 }
+    );
+    ref.current?.querySelectorAll(".fade-up").forEach((el) => observer.observe(el));
+    return () => observer.disconnect();
+  }, []);
 
   return (
     <section
@@ -22,22 +27,20 @@ export default function Hero() {
         overflow: "hidden",
       }}
     >
-      {/* Parallax background */}
+      {/* Static background */}
       <div
-        ref={bgRef}
         style={{
           position: "absolute",
-          inset: "-10% 0",
+          inset: 0,
           background: `url('/background2560x1440.svg')`,
           backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat",
-          willChange: "transform",
           zIndex: 0,
         }}
       />
 
-      {/* Subtle vignette overlay */}
+      {/* Vignette overlay */}
       <div
         style={{
           position: "absolute",
@@ -64,25 +67,21 @@ export default function Hero() {
         >
           <div className="hero-text-content" style={{ flex: "1", maxWidth: "780px" }}>
 
-            {/* Location — clip-path slide in */}
-            <p className="reveal section-label-animate section-label" style={{ marginBottom: "1.25rem" }}>
+            <p className="section-label fade-up" style={{ marginBottom: "1.25rem" }}>
               Porto, Portugal
             </p>
 
-            {/* Name — letter stagger */}
             <h1
+              className="fade-up fade-up-delay-1"
               style={{ maxWidth: "780px", marginBottom: "1.25rem", lineHeight: 1.1 }}
-              aria-label="Alberto Ferreira"
             >
-              <HeroName />
+              ALBERTO<br />FERREIRA
             </h1>
 
-            {/* Divider line — draw animation */}
-            <div className="reveal gold-rule-full" style={{ marginBottom: "1.5rem" }} />
+            <div className="gold-rule fade-up fade-up-delay-2" style={{ marginBottom: "1.5rem" }} />
 
-            {/* Positioning copy — reveal up */}
             <p
-              className="reveal reveal-up delay-3"
+              className="fade-up fade-up-delay-3"
               style={{
                 maxWidth: "520px",
                 fontSize: "1rem",
@@ -96,9 +95,8 @@ export default function Hero() {
               means for the ones that want to.
             </p>
 
-            {/* CTAs — reveal up, later delay */}
             <div
-              className="reveal reveal-up delay-4"
+              className="fade-up fade-up-delay-4"
               style={{ display: "flex", gap: "1rem", flexWrap: "wrap" }}
             >
               <a href="#about" className="btn-primary">Explore my profile</a>
@@ -106,13 +104,12 @@ export default function Hero() {
             </div>
           </div>
 
-          {/* Photo — image wipe reveal */}
+          {/* Photo */}
           <div
-            className="hero-image-container reveal"
+            className="hero-image-container fade-up fade-up-delay-2"
             style={{ flex: "0 0 400px", marginTop: "2.5rem", position: "relative" }}
           >
             <div
-              className="image-reveal-wrapper"
               style={{
                 position: "relative",
                 width: "100%",
@@ -126,6 +123,7 @@ export default function Hero() {
                 src="/fotoofme.jpeg"
                 alt="Alberto Ferreira"
                 fill
+                priority
                 style={{
                   objectFit: "cover",
                   filter: "grayscale(10%) contrast(105%)",
@@ -149,9 +147,9 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* Scroll indicator — animated pulse */}
+        {/* Scroll indicator */}
         <div
-          className="reveal reveal-fade delay-5"
+          className="fade-up fade-up-delay-5"
           style={{
             position: "absolute",
             bottom: "-4rem",
@@ -173,40 +171,9 @@ export default function Hero() {
           >
             Scroll
           </span>
-          <div className="scroll-line-animated" />
+          <div style={{ width: "1px", height: "48px", background: "var(--gold)" }} />
         </div>
       </div>
     </section>
-  );
-}
-
-/* Letter-by-letter drop animation for the hero name */
-function HeroName() {
-  const lines = NAME.split("\n");
-  let globalIndex = 0;
-
-  return (
-    <>
-      {lines.map((line, li) => (
-        <span key={li} style={{ display: "block" }}>
-          {line.split("").map((char) => {
-            const delay = globalIndex * 55;
-            globalIndex++;
-            return (
-              <span
-                key={`${li}-${char}-${delay}`}
-                className="hero-letter"
-                style={{
-                  animationDelay: `${delay}ms`,
-                  color: li === 1 ? "var(--white)" : undefined,
-                }}
-              >
-                {char === " " ? "\u00A0" : char}
-              </span>
-            );
-          })}
-        </span>
-      ))}
-    </>
   );
 }
