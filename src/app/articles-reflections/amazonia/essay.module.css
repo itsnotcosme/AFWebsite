@@ -1,0 +1,241 @@
+.essayStandalone {
+  --cream: #f5f0e8;
+  --ink: #1a1a18;
+  --muted: #7a7870;
+  --border: rgba(26, 26, 24, 0.12);
+  background: var(--cream);
+  color: var(--ink);
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
+
+.wrap {
+  max-width: 740px;
+  margin: 0 auto;
+  padding: 6rem 2rem 8rem;
+}
+
+.backLink {
+  display: block;
+  text-decoration: none;
+  font-family: var(--font-jost), sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  margin-bottom: 3.5rem;
+  transition: color 0.3s ease;
+}
+
+.backLink:hover {
+  color: var(--ink);
+}
+
+.tag {
+  font-family: var(--font-jost), sans-serif;
+  font-size: 10.5px;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--muted);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 1.5rem;
+}
+
+.tag::before {
+  content: "";
+  display: inline-block;
+  width: 30px;
+  height: 1px;
+  background: var(--muted);
+}
+
+.h1 {
+  font-family: var(--font-serif), serif;
+  font-size: clamp(2.1rem, 5.5vw, 3.1rem);
+  font-weight: 500;
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+  margin-bottom: 1.75rem;
+}
+
+.h1 em {
+  font-style: italic;
+  font-weight: 400;
+}
+
+.meta {
+  font-family: var(--font-jost), sans-serif;
+  font-size: 11px;
+  color: var(--muted);
+  letter-spacing: 0.1em;
+  display: flex;
+  gap: 20px;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid rgba(26, 26, 24, 0.15);
+  margin-bottom: 2.5rem;
+  text-transform: uppercase;
+}
+
+.lead {
+  font-family: var(--font-serif), serif;
+  font-size: 1.3rem;
+  font-style: italic;
+  font-weight: 400;
+  line-height: 1.7;
+  color: var(--ink);
+  margin-bottom: 2.25rem;
+  max-width: none;
+}
+
+.sectionLabel {
+  font-family: var(--font-jost), sans-serif;
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin: 1.5rem 0 0.75rem;
+}
+
+.bodyText p {
+  font-family: var(--font-jost), sans-serif;
+  font-size: 0.975rem;
+  font-weight: 300;
+  line-height: 1.9;
+  color: var(--ink);
+  margin-bottom: 1.5rem;
+  max-width: none;
+  text-align: justify;
+}
+
+.bodyText strong {
+  font-weight: 500;
+}
+
+.blockquote {
+  border-left: 1.5px solid var(--ink);
+  padding: 0.2rem 0 0.2rem 1.5rem;
+  margin: 2.75rem 0;
+  font-family: var(--font-serif), serif;
+  font-size: 1.4rem;
+  font-weight: 500;
+  font-style: italic;
+  line-height: 1.5;
+  color: var(--ink);
+}
+
+.imgBlock {
+  margin: 2.5rem 0 0.75rem;
+}
+
+.imgBlock img {
+  width: 100%;
+  display: block;
+  border-radius: 3px;
+  height: auto !important;
+}
+
+.caption {
+  font-family: var(--font-jost), sans-serif;
+  font-size: 11px;
+  color: var(--muted);
+  text-align: center;
+  margin-top: 0.6rem;
+  margin-bottom: 0.75rem;
+  font-style: italic;
+  letter-spacing: 0.02em;
+}
+
+.divider {
+  width: 36px;
+  height: 0.5px;
+  background: var(--muted);
+  margin: 1.5rem 0;
+  opacity: 0.4;
+}
+
+.bylineFooter {
+  font-family: var(--font-jost), sans-serif;
+  font-size: 11.5px;
+  color: var(--muted);
+  line-height: 1.7;
+  font-style: italic;
+}
+
+.authorSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  text-align: center;
+}
+
+.bottomNavContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 4rem;
+  width: 100%;
+}
+
+.navButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(26, 26, 24, 0.45);
+  color: var(--cream);
+  text-decoration: none;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.navButton:hover {
+  background: rgba(26, 26, 24, 0.7);
+  transform: scale(1.05);
+}
+
+.navButton svg {
+  width: 20px;
+  height: 20px;
+  stroke-width: 2.5;
+}
+
+.authorName {
+  font-family: var(--font-jost), sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink);
+}
+
+.authorPhoto {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1px solid var(--border);
+}
+
+.navButtonWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.navLabel {
+  font-family: var(--font-jost), sans-serif;
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+}

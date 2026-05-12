@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /_next/static/
+
+Sitemap: https://albertoferreira.pt/sitemap.xml
