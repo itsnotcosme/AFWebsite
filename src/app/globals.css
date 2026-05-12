@@ -284,15 +284,7 @@ section {
 }
 
 /* ─── Hero Responsiveness ─── */
-@media (min-width: 769px) and (max-width: 960px) {
-  .hero-image-container {
-    flex: 0 0 320px !important;
-  }
-  .hero-content-wrapper {
-    gap: 2.5rem !important;
-  }
-}
-@media (max-width: 768px) {
+@media (max-width: 960px) {
   .hero-content-wrapper {
     flex-direction: column;
     gap: 2rem !important;
