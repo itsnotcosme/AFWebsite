@@ -68,7 +68,7 @@ export default function Writing() {
             >
               {/* Tag + read time */}
               <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "1.25rem", flexWrap: "wrap", gap: "0.5rem" }}>
-                <span className="tag">{article.tag}</span>
+                <span className="tag" style={{ color: "var(--gold)", borderColor: "var(--gold)" }}>{article.tag}</span>
                 <span style={{ fontSize: "0.68rem", color: "rgba(12,24,40,0.5)", letterSpacing: "0.1em", textTransform: "uppercase" }}>
                   {article.readTime}
                 </span>
