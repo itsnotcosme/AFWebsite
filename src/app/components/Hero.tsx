@@ -2,13 +2,13 @@
 
 import { useEffect, useRef } from "react";
 import Image from "next/image";
-import { useReveal, useParallax } from "../hooks/useReveal";
+import { useReveal } from "../hooks/useReveal";
+import { EtherealShadow } from "./EtherealShadow";
 
 const NAME = "ALBERTO\nFERREIRA";
 
 export default function Hero() {
   const ref = useReveal(0.05) as React.RefObject<HTMLElement>;
-  const bgRef = useParallax(0.18) as React.RefObject<HTMLDivElement>;
 
   return (
     <section
@@ -22,28 +22,20 @@ export default function Hero() {
         overflow: "hidden",
       }}
     >
-      {/* Parallax background */}
-      <div
-        ref={bgRef}
-        style={{
-          position: "absolute",
-          inset: "-10% 0",
-          background: `url('/background2560x1440.svg')`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          backgroundRepeat: "no-repeat",
-          willChange: "transform",
-          zIndex: 0,
-        }}
-      />
+      {/* Ethereal shadow background */}
+      <div style={{ position: "absolute", inset: 0, zIndex: 0, pointerEvents: "none" }}>
+        <EtherealShadow
+          color="rgba(184, 153, 106, 0.9)"
+          animation={{ scale: 30, speed: 15 }}
+        />
+      </div>
 
-      {/* Subtle vignette overlay */}
+      {/* Vignette overlay */}
       <div
         style={{
           position: "absolute",
           inset: 0,
-          background:
-            "radial-gradient(ellipse at 60% 50%, transparent 30%, rgba(12,24,40,0.6) 100%)",
+          background: "radial-gradient(ellipse at 50% 50%, transparent 20%, rgba(12,24,40,0.85) 100%)",
           zIndex: 0,
           pointerEvents: "none",
         }}
