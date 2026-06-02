@@ -50,10 +50,10 @@ export default function Education() {
   }, []);
 
   return (
-    <section id="education" ref={ref} style={{ background: "var(--white)" }}>
+    <section id="education" ref={ref}>
       <div className="container">
         <p className="section-label fade-up">Education</p>
-        <h2 className="fade-up fade-up-delay-1" style={{ marginBottom: "3.5rem", color: "var(--navy)" }}>
+        <h2 className="fade-up fade-up-delay-1" style={{ marginBottom: "3.5rem" }}>
           Academic foundation
         </h2>
 
@@ -65,13 +65,13 @@ export default function Education() {
             <div 
               key={edu.degree + edu.institution} 
               className={`card fade-up fade-up-delay-${i + 2}`}
-              style={{ display: "flex", flexDirection: "column", height: "100%", background: "rgba(255,255,255,0.7)", borderColor: "rgba(12,24,40,0.15)" }}
+              style={{ display: "flex", flexDirection: "column", height: "100%" }}
             >
-              <h3 style={{ marginBottom: "0.25rem", textTransform: "uppercase", color: "var(--navy)" }}>{edu.degree}</h3>
+              <h3 style={{ marginBottom: "0.25rem", textTransform: "uppercase" }}>{edu.degree}</h3>
               <p
                 style={{
                   fontSize: "0.85rem",
-                  color: "rgba(12,24,40,0.55)",
+                  color: "var(--cream-muted)",
                   margin: "0 0 0.5rem",
                 }}
               >
@@ -93,7 +93,7 @@ export default function Education() {
 
               <div className="gold-rule" />
 
-              <p style={{ marginBottom: "1.25rem", fontSize: "0.88rem", maxWidth: "none", flex: 1, lineHeight: 1.7, color: "var(--navy)" }}>{edu.detail}</p>
+              <p style={{ marginBottom: "1.25rem", fontSize: "0.88rem", maxWidth: "none", flex: 1, lineHeight: 1.7 }}>{edu.detail}</p>
 
 
 
@@ -102,8 +102,8 @@ export default function Education() {
                   style={{
                     fontStyle: "italic",
                     fontSize: "0.85rem",
-                    color: "rgba(12,24,40,0.6)",
-                    borderTop: "1px solid rgba(12,24,40,0.15)",
+                    color: "var(--cream-muted)",
+                    borderTop: "1px solid var(--navy-border)",
                     paddingTop: "1rem",
                     margin: 0,
                   }}
