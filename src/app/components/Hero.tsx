@@ -112,7 +112,7 @@ export default function Hero() {
             style={{ flex: "0 0 400px", marginTop: "2.5rem", position: "relative" }}
           >
             <div
-              className="image-reveal-wrapper"
+              className="image-reveal-wrapper reveal"
               style={{
                 position: "relative",
                 width: "100%",
