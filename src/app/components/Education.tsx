@@ -93,7 +93,7 @@ export default function Education() {
 
               <div className="gold-rule" />
 
-              <p style={{ marginBottom: "1.25rem", fontSize: "0.88rem", maxWidth: "none", flex: 1, lineHeight: 1.7 }}>{edu.detail}</p>
+              <p style={{ marginBottom: "1.25rem", fontSize: "0.88rem", maxWidth: "none", flex: 1, lineHeight: 1.7, color: "var(--white)" }}>{edu.detail}</p>
 
 
 
@@ -102,7 +102,7 @@ export default function Education() {
                   style={{
                     fontStyle: "italic",
                     fontSize: "0.85rem",
-                    color: "var(--cream-muted)",
+                    color: "var(--white)",
                     borderTop: "1px solid var(--navy-border)",
                     paddingTop: "1rem",
                     margin: 0,
