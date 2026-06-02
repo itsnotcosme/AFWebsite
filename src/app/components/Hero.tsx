@@ -109,7 +109,7 @@ export default function Hero() {
           {/* Photo — image wipe reveal */}
           <div
             className="hero-image-container reveal"
-            style={{ flex: "0 0 400px", marginTop: "2.5rem", position: "relative" }}
+            style={{ flex: "0 0 480px", marginTop: "2.5rem", position: "relative" }}
           >
             <div
               className="image-reveal-wrapper reveal"
@@ -118,7 +118,7 @@ export default function Hero() {
                 width: "100%",
                 aspectRatio: "4/5",
                 border: "1px solid var(--navy-border)",
-                padding: "0.5rem",
+                padding: 0,
                 background: "var(--navy-light)",
               }}
             >
