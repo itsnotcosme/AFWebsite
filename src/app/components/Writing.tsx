@@ -34,15 +34,15 @@ export default function Writing() {
   }, []);
 
   return (
-    <section id="writing" ref={ref}>
+    <section id="writing" ref={ref} style={{ background: "var(--white)" }}>
       <div className="container">
         <p className="section-label fade-up">Thinking Out Loud</p>
-        <h2 className="fade-up fade-up-delay-1" style={{ marginBottom: "1rem" }}>
+        <h2 className="fade-up fade-up-delay-1" style={{ marginBottom: "1rem", color: "var(--navy)" }}>
           Articles &amp; reflections
         </h2>
         <p
           className="fade-up fade-up-delay-2"
-          style={{ marginBottom: "3.5rem", maxWidth: "none" }}
+          style={{ marginBottom: "3.5rem", maxWidth: "none", color: "var(--navy)" }}
         >
           A space for short pieces on brand strategy, consumer psychology, and the
           questions I find worth thinking through. Precise, honest, and without
@@ -59,8 +59,8 @@ export default function Writing() {
                 display: "block",
                 cursor: "pointer",
                 textDecoration: "none",
-                background: "var(--navy-card)",
-                border: "1px solid var(--navy-border)",
+                background: "rgba(255,255,255,0.7)",
+                border: "1px solid rgba(12,24,40,0.15)",
                 padding: "2.5rem 2rem",
                 transition: "border-color 0.3s ease, transform 0.3s ease",
               }}
@@ -69,18 +69,18 @@ export default function Writing() {
               {/* Tag + read time */}
               <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "1.25rem", flexWrap: "wrap", gap: "0.5rem" }}>
                 <span className="tag">{article.tag}</span>
-                <span style={{ fontSize: "0.68rem", color: "var(--cream-muted)", letterSpacing: "0.1em", textTransform: "uppercase" }}>
+                <span style={{ fontSize: "0.68rem", color: "rgba(12,24,40,0.5)", letterSpacing: "0.1em", textTransform: "uppercase" }}>
                   {article.readTime}
                 </span>
               </div>
 
               {/* Title */}
-              <h3 style={{ fontSize: "1.4rem", marginBottom: "1rem", color: "var(--white)" }}>
+              <h3 style={{ fontSize: "1.4rem", marginBottom: "1rem", color: "var(--navy)" }}>
                 {article.title}
               </h3>
 
               {/* Excerpt */}
-              <p style={{ fontStyle: "italic", fontSize: "0.9rem", maxWidth: "none", borderLeft: "2px solid var(--gold)", paddingLeft: "1.25rem", marginBottom: "2rem", color: "var(--cream-muted)" }}>
+              <p style={{ fontStyle: "italic", fontSize: "0.9rem", maxWidth: "none", borderLeft: "2px solid var(--gold)", paddingLeft: "1.25rem", marginBottom: "2rem", color: "rgba(12,24,40,0.7)" }}>
                 {article.excerpt}
               </p>
 
