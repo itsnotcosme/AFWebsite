@@ -32,6 +32,7 @@
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 80px;
+  scroll-snap-type: y mandatory;
 }
 
 body {
@@ -87,6 +88,9 @@ a {
 section {
   padding: 7rem 0;
   position: relative;
+  scroll-snap-align: start;
+  height: 100vh;
+  overflow-y: auto;
 }
 
 .container {
@@ -116,10 +120,7 @@ section {
 }
 
 .section-divider {
-  width: 100%;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, var(--navy-border) 20%, var(--navy-border) 80%, transparent);
-  margin: 0;
+  display: none;
 }
 
 /* ─── Fade-in animation ─── */
@@ -280,7 +281,7 @@ section {
 
 /* ─── Responsive helpers ─── */
 @media (max-width: 768px) {
-  section { padding: 4.5rem 0; }
+  section { padding: 4.5rem 0; height: 100vh; }
   .container { padding: 0 1.5rem; }
 }
 
