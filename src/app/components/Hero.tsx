@@ -162,7 +162,7 @@ export default function Hero() {
               }}
             >
               <Image
-                src="/fotoofme.jpeg"
+                src="/Hero_Image.jpg"
                 alt="Alberto Ferreira"
                 fill
                 style={{
