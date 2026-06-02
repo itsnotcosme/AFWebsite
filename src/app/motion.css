@@ -222,9 +222,8 @@
   transition: left 0.7s ease;
 }
 
-/* ─── Respect reduced motion ─── */
+/* â”€â”€â”€ Respect reduced motion â”€â”€â”€ */
 @media (prefers-reduced-motion: reduce) {
-  /* reveal system */
   .reveal,
   .reveal-up,
   .reveal-left,
@@ -232,39 +231,19 @@
   .reveal-scale,
   .reveal-fade,
   .card-reveal,
+  .gold-rule-animated,
+  .gold-rule-full,
   .section-label-animate,
+  .image-reveal-wrapper::after,
   .hero-letter {
     opacity: 1;
     transform: none;
     clip-path: none;
     animation: none;
     transition: none;
-  }
-
-  /* gold rules */
-  .gold-rule-animated {
-    opacity: 1;
     width: 32px;
-    transition: none;
-  }
-  .gold-rule-full {
-    opacity: 1;
-    width: 100%;
-    transition: none;
   }
 
-  /* photo overlay — must be hidden so photo is always visible */
-  .image-reveal-wrapper::after {
-    transform: translateX(101%);
-    transition: none;
-  }
-
-  /* fade-up system (Education, Writing, Contact, etc.) */
-  .fade-up {
-    opacity: 1;
-    transform: none;
-    transition: none;
-  }
-
+  .gold-rule-full { width: 100%; }
   .scroll-line-animated { animation: none; opacity: 1; }
 }
