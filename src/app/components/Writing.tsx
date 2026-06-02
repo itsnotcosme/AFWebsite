@@ -42,7 +42,7 @@ export default function Writing() {
         </h2>
         <p
           className="fade-up fade-up-delay-2"
-          style={{ marginBottom: "3.5rem", maxWidth: "none", color: "var(--white)" }}
+          style={{ marginBottom: "3.5rem", maxWidth: "none" }}
         >
           A space for short pieces on brand strategy, consumer psychology, and the
           questions I find worth thinking through. Precise, honest, and without
@@ -80,7 +80,7 @@ export default function Writing() {
               </h3>
 
               {/* Excerpt */}
-              <p style={{ fontStyle: "italic", fontSize: "0.9rem", maxWidth: "none", borderLeft: "2px solid var(--gold)", paddingLeft: "1.25rem", marginBottom: "2rem", color: "var(--white)" }}>
+              <p style={{ fontStyle: "italic", fontSize: "0.9rem", maxWidth: "none", borderLeft: "2px solid var(--gold)", paddingLeft: "1.25rem", marginBottom: "2rem", color: "var(--cream-muted)" }}>
                 {article.excerpt}
               </p>
 
