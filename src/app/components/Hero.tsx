@@ -3,6 +3,7 @@
 import { useEffect, useRef } from "react";
 import Image from "next/image";
 import { useReveal, useParallax } from "../hooks/useReveal";
+import { EtherealShadow } from "./EtherealShadow";
 
 const NAME = "ALBERTO\nFERREIRA";
 
@@ -48,6 +49,44 @@ export default function Hero() {
           pointerEvents: "none",
         }}
       />
+
+      {/* Ethereal shadow — right orb behind photo */}
+      <div
+        style={{
+          position: "absolute",
+          right: "-5%",
+          top: "0%",
+          width: "55%",
+          height: "100%",
+          zIndex: 0,
+          opacity: 0.55,
+          pointerEvents: "none",
+        }}
+      >
+        <EtherealShadow
+          color="rgba(184, 153, 106, 1)"
+          animation={{ scale: 28, speed: 18 }}
+        />
+      </div>
+
+      {/* Ethereal shadow — left accent behind text */}
+      <div
+        style={{
+          position: "absolute",
+          left: "-10%",
+          top: "10%",
+          width: "45%",
+          height: "80%",
+          zIndex: 0,
+          opacity: 0.2,
+          pointerEvents: "none",
+        }}
+      >
+        <EtherealShadow
+          color="rgba(184, 153, 106, 1)"
+          animation={{ scale: 20, speed: 14 }}
+        />
+      </div>
 
       <div
         className="container"

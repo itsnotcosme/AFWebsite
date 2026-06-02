@@ -4,6 +4,7 @@ import About from "./components/About";
 import Experience from "./components/Experience";
 import Education from "./components/Education";
 import Interests from "./components/Interests";
+import Projects from "./components/Projects";
 import Writing from "./components/Writing";
 import Personal from "./components/Personal";
 import Contact from "./components/Contact";
@@ -27,6 +28,8 @@ export default function Home() {
           <Interests />
         </div>
 
+        <div className="section-divider" />
+        <Projects />
         <Writing />
         <div className="section-divider" />
         <Contact />
