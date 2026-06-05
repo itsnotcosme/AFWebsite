@@ -234,7 +234,6 @@
   .gold-rule-animated,
   .gold-rule-full,
   .section-label-animate,
-  .image-reveal-wrapper::after,
   .hero-letter {
     opacity: 1;
     transform: none;
@@ -246,4 +245,8 @@
 
   .gold-rule-full { width: 100%; }
   .scroll-line-animated { animation: none; opacity: 1; }
+
+  .image-reveal-wrapper::after {
+    display: none;
+  }
 }
